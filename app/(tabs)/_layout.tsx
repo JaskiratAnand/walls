@@ -22,7 +22,7 @@ export default function TabLayout() {
         name="account"
         options={{
           title: 'Account',
-          tabBarIcon: ({ color }) => <FontAwesome size={24} name="gear" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome size={24} name="user" color={color} />,
         }}
       />
     </Tabs>

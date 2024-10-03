@@ -64,13 +64,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    height: 350,
+    height: 400,
     overflow: 'hidden',
   },
   content: {
+    marginTop: -25,
     flex: 1,
-    padding: 32,
+    padding: 12,
     gap: 16,
     overflow: 'hidden',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
   },
 });
