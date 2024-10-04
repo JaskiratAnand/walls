@@ -1,12 +1,11 @@
 import DownloadPicture from "@/components/BottomSheet";
 import { SplitView } from "@/components/SplitView"
-import { useWallpapers, Wallpaper } from "@/hooks/useWallpapers"
+import { useLibraryWallpapers, Wallpaper } from "@/hooks/useWallpapers"
 import { useState } from "react";
-import { Text, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import { View } from "react-native"
 
-export default function library () {
-    const wallpapers = useWallpapers();
+export default function Library () {
+    const wallpapers = useLibraryWallpapers();
     const [selectedWallpaper, setSelectedWallpaper] = useState<Wallpaper | null>(null)
 
     return <View style={{flex: 1}}>

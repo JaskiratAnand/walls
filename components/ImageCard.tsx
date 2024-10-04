@@ -1,15 +1,13 @@
-import { Image, View, StyleSheet, useColorScheme, Pressable } from "react-native";
+import { Image, View, StyleSheet, Pressable } from "react-native";
 import { Wallpaper } from "@/hooks/useWallpapers";
 import { ThemedView } from "./ThemedView";
 import { ThemedText } from "./ThemedText";
 import { FontAwesome6 } from "@expo/vector-icons";
-import { Colors } from "@/constants/Colors";
 
 export default function ImageCard ({wallpaper, onPress}: { 
     wallpaper: Wallpaper,
     onPress: () => void
 }) {
-    const theme = useColorScheme() ?? "light";
 
     return (
         <Pressable onPress={onPress}>

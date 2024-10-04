@@ -1,8 +1,11 @@
-import { View, Text } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
+import ThemedSafeAreaView from "@/components/ThemedSafeAreaView"
+import { ThemedText } from "@/components/ThemedText"
+import { ThemedView } from "@/components/ThemedView"
 
-export default function accountInfo () {
-    return <View>
-        <Text>Account Info page</Text>
-    </View>
+export default function AccountInfo () {
+    return <ThemedSafeAreaView>
+        <ThemedView>
+            <ThemedText>Account Info page</ThemedText>
+        </ThemedView>
+    </ThemedSafeAreaView>
 }

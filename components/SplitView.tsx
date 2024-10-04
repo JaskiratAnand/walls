@@ -14,34 +14,31 @@ export function SplitView ({wallpapers, toggleBottomSheet }: {
 
     return (
         <>
-            <ThemedView style={styles.container}>
-                <ThemedView style={styles.innerContainer}>
-                    <FlatList 
-                        data={wallpapers.filter((_, index) => index % 2 === 0)}
-                        renderItem={({item}) => 
+            <FlatList 
+                data={
+                    Array.from({ length: Math.ceil(wallpapers.length / 2) }, (_, index) => 
+                        [wallpapers[index * 2], wallpapers[index * 2 + 1]]
+                    )
+                }
+                renderItem={({item: [first, second]}) => 
+                    <ThemedView style={styles.container}>
+                        <ThemedView style={styles.innerContainer}>
                             <View style={styles.imageContainer}>
-                                <ImageCard wallpaper={item} onPress={() => {
-                                    toggleBottomSheet && toggleBottomSheet(item);
+                                <ImageCard wallpaper={first} onPress={() => {
+                                    toggleBottomSheet && toggleBottomSheet(first);
                                 }} />
                             </View>
-                        }
-                        keyExtractor={(item) => item.name}
-                    />
-                </ThemedView>
-                <ThemedView style={styles.innerContainer}>
-                    <FlatList 
-                        data={wallpapers.filter((_, index) => index % 2 === 1)}
-                        renderItem={({item}) => 
+                        </ThemedView>
+                        {second && <ThemedView style={styles.innerContainer}>
                             <View style={styles.imageContainer}>
-                                <ImageCard wallpaper={item} onPress={() => {
-                                    toggleBottomSheet && toggleBottomSheet(item);
+                                <ImageCard wallpaper={second} onPress={() => {
+                                    toggleBottomSheet && toggleBottomSheet(second);
                                 }} />
                             </View>
-                        }
-                        keyExtractor={(item) => item.name}
-                    />
-                </ThemedView>
-            </ThemedView>
+                        </ThemedView>}
+                    </ThemedView>
+                }
+            />
         </>
     )
 }
