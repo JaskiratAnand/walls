@@ -26,7 +26,8 @@
       "permissions": [
         "WRITE_EXTERNAL_STORAGE",
         "READ_EXTERNAL_STORAGE"
-      ]
+      ],
+      "package": "com.j.anand01.walls"
     },
     "web": {
       "bundler": "metro",
@@ -39,6 +40,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5fda6987-36b8-43e7-98ac-6f9d637e2ffd"
+      }
     }
   }
 }

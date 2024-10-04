@@ -14,9 +14,9 @@ export function CarouselElement() {
             <Carousel
                 loop
                 width={width}
-                autoPlay={false}
+                autoPlay={true}
                 data={wallpapers}
-                scrollAnimationDuration={2000}
+                scrollAnimationDuration={5000}
                 onSnapToItem={(index) => console.log('current index:', index)}
                 renderItem={({ item }) => (
                     <>
